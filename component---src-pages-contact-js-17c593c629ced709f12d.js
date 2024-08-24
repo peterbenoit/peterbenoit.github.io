@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[501],{5791:function(e,a,t){t.r(a);var l=t(7294);a.default=()=>l.createElement("main",{className:"container mx-auto p-4"},l.createElement("h1",{className:"text-3xl font-bold"},"Contact Me"),l.createElement("p",{className:"mt-2"},"You can reach me at ",l.createElement("a",{href:"mailto:your-email@example.com",className:"text-blue-500"},"your-email@example.com")))}}]);
+//# sourceMappingURL=component---src-pages-contact-js-17c593c629ced709f12d.js.map
