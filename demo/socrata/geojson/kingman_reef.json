@@ -1,0 +1,4 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":null,"properties":{"name":"Kingman Reef"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-162.38582611083984,6.436083083530553],[-162.3834228515625,6.428406948725202],[-162.34668731689453,6.393265832140945],[-162.34308242797852,6.405548439366976],[-162.37913131713867,6.435741924446027],[-162.38582611083984,6.436083083530553]]]},"properties":{"name":"Kingman Reef"}}
+]}
