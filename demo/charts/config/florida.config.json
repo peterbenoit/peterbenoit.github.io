@@ -1,0 +1,25 @@
+{
+    "series": [
+        {
+            "id": "ACTLISCOUFL",
+            "name": "Active Listings in Florida",
+            "description": "This chart shows the number of active real estate listings in Florida. A higher number indicates more properties are available for sale.",
+            "canvasId": "activeListingsChart",
+            "color": "rgba(255, 99, 132, 0.2)"
+        },
+        {
+            "id": "MEDDAYONMARFL",
+            "name": "Median Days on Market in Florida",
+            "description": "This chart displays the median number of days that properties stay on the market before being sold. A lower value suggests faster sales.",
+            "canvasId": "medianDaysChart",
+            "color": "rgba(54, 162, 235, 0.2)"
+        },
+        {
+            "id": "ACTLISCOUMMFL",
+            "name": "Active Listing Count Month-Over-Month in Florida",
+            "description": "The count of active single-family and condo/townhome listings for a given market during the specified month (excludes pending listings).",
+            "canvasId": "housePriceIndexChart",
+            "color": "rgba(75, 192, 192, 0.2)"
+        }
+    ]
+}

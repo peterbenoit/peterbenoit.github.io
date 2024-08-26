@@ -1,0 +1,4 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-79.76202964782713,15.753101660505036],[-79.7638750076294,15.74727778815894],[-79.75597858428955,15.74806257501618],[-79.76202964782713,15.753101660505036]]]},"properties":{"name":"Seranilla Bank"}},
+{"type":"Feature","geometry":null,"properties":{"name":"Seranilla Bank"}}
+]}
