@@ -56,7 +56,19 @@ interactiveElements.forEach((el) => {
 class ParticleSystem {
 	constructor() {
 		this.canvas = document.getElementById('particles-canvas');
+
+		// Check if canvas exists and is actually a canvas element
+		if (!this.canvas || this.canvas.tagName !== 'CANVAS') {
+			console.warn('Canvas element not found or not a canvas element');
+			return;
+		}
+
 		this.ctx = this.canvas.getContext('2d');
+		if (!this.ctx) {
+			console.warn('Could not get 2D context from canvas');
+			return;
+		}
+
 		this.particles = [];
 		this.mouse = { x: 0, y: 0 };
 
@@ -144,8 +156,12 @@ class ParticleSystem {
 	}
 }
 
-// Initialize particle system
-new ParticleSystem();
+// Initialize particle system with error checking
+try {
+	new ParticleSystem();
+} catch (error) {
+	console.warn('Failed to initialize particle system:', error);
+}
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
