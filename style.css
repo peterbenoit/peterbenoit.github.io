@@ -870,7 +870,7 @@ body {
 
 	.hero-card {
 		width: 100%;
-		max-width: 350px;
+		/* max-width: 350px; */
 	}
 
 	.hero-stats {
@@ -892,7 +892,7 @@ body {
 	}
 
 	.features-section {
-		padding: 4rem 1rem;
+		padding: 2rem 1rem;
 	}
 
 	.features-grid {
