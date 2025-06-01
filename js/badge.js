@@ -14,12 +14,13 @@
 (function () {
 	// Configuration
 	const scriptTag = document.currentScript;
+	const urlParams = new URLSearchParams(window.location.search);
 	const config = {
-		mode: scriptTag.getAttribute('data-mode') === 'tracker' || getQueryParam('mode') === 'tracker' ? 'tracker' : 'full',
-		position: scriptTag.getAttribute('data-position') === 'top' ? 'top' : 'bottom',
-		visible: scriptTag.getAttribute('data-visible') !== 'false' && getQueryParam('visible') !== 'false',
-		allowBypass: getQueryParam('allow') === 'true',
-		delay: parseInt(scriptTag.getAttribute('data-delay') || '1000', 10)
+		mode: (scriptTag.dataset.mode === 'tracker') || (urlParams.get('mode') === 'tracker') ? 'tracker' : 'full',
+		position: scriptTag.dataset.position === 'top' ? 'top' : 'bottom',
+		visible: scriptTag.dataset.visible !== 'false' && urlParams.get('visible') !== 'false',
+		allowBypass: urlParams.get('allow') === 'true',
+		delay: parseInt(scriptTag.dataset.delay || '1000', 10)
 	};
 
 	// Inject global SEO author link style only once
@@ -170,8 +171,4 @@
 		}
 	}
 
-	function getQueryParam(name) {
-		const urlParams = new URLSearchParams(window.location.search);
-		return urlParams.get(name);
-	}
 })();
