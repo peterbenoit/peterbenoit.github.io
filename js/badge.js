@@ -22,6 +22,14 @@
 		delay: parseInt(scriptTag.getAttribute('data-delay') || '1000', 10)
 	};
 
+	// Inject global SEO author link style only once
+	if (!document.getElementById('seo-author-link-style')) {
+		const seoStyle = document.createElement('style');
+		seoStyle.id = 'seo-author-link-style';
+		seoStyle.textContent = '.seo-author-link{position:absolute;left:-9999px;}';
+		document.head.appendChild(seoStyle);
+	}
+
 	// Create and show badge if visible and in full mode
 	if (config.mode === 'full' && config.visible) {
 		createBadge(config.position);
@@ -74,7 +82,7 @@
 
 		// Add animation styles
 		const style = document.createElement('style');
-		style.innerHTML = `
+		style.textContent = `
             #badge-${randomId}:hover {
                 color: #ff00ff;
                 animation: rainbow-${randomId} 1.5s linear infinite;
