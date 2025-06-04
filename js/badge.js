@@ -2,7 +2,7 @@
  * Enhanced UI Badge and Analytics
  *
  * Configuration options:
- * - data-position="top" | "bottom" - Badge position (default: "bottom")
+ * - data-position="top" | "bottom" | "top-left" | "bottom-left" - Badge position (default: "bottom")
  * - data-visible="true" | "false" - Show/hide badge (default: "true")
  * - data-mode="full" | "tracker" - Full badge or tracker-only (default: "full")
  * - data-delay="500" - Milliseconds to delay tracking (default: "1000")
@@ -17,7 +17,7 @@
 	const urlParams = new URLSearchParams(window.location.search);
 	const config = {
 		mode: (scriptTag.dataset.mode === 'tracker') || (urlParams.get('mode') === 'tracker') ? 'tracker' : 'full',
-		position: scriptTag.dataset.position === 'top' ? 'top' : 'bottom',
+		position: ['top', 'bottom', 'top-left', 'bottom-left'].includes(scriptTag.dataset.position) ? scriptTag.dataset.position : 'bottom',
 		visible: scriptTag.dataset.visible !== 'false' && urlParams.get('visible') !== 'false',
 		allowBypass: urlParams.get('allow') === 'true',
 		delay: parseInt(scriptTag.dataset.delay || '1000', 10)
@@ -43,11 +43,12 @@
 				color:#333;
 				padding:.325rem .625rem;
 				text-decoration:none;
-				right:10px;
 				z-index:9999;
 			}
-			.ui-badge.top{top:10px;}
-			.ui-badge.bottom{bottom:10px;}
+			.ui-badge.top, .ui-badge.top-left{top:10px;}
+			.ui-badge.bottom, .ui-badge.bottom-left{bottom:10px;}
+			.ui-badge.top, .ui-badge.bottom{right:10px;}
+			.ui-badge.top-left, .ui-badge.bottom-left{left:10px;}
 			.ui-badge:hover{
 				color:#ff00ff;
 				animation:rainbow 1.5s linear infinite;
